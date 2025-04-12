@@ -2,7 +2,6 @@
 
 ---
 
-```markdown
 # Nebula Navigator
 
 Nebula Navigator is an AI-powered interactive tool that transforms code repository analysis into an immersive 3D experience. By visualizing your code as a dynamic galaxy, the tool provides cutting-edge insights into code quality, structure, and dependencies. Its core features—such as vector terrain rendering using Perlin noise and real-time AI-driven analysis—enable seamless navigation and deep understanding of complex codebases.
@@ -162,7 +161,6 @@ For questions, suggestions, or further collaboration, please reach out to:
 ---
 
 Nebula Navigator – Transform your code repositories into an interactive universe of insights.
-```
 
 ---
 
