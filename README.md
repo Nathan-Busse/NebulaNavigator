@@ -158,10 +158,8 @@ For questions, suggestions, or further collaboration, please reach out to:
 - **Email:** bussenathan@icloud.com
 - **GitHub:** [https://github.com/Nathan-Busse](https://github.com/Nathan-Busse)
 
----
 
 Nebula Navigator – Transform your code repositories into an interactive universe of insights.
-```
 
 ---
 
