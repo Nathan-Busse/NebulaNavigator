@@ -25,7 +25,6 @@ NebulaNavigator/
 │   ├── test_backend.py
 │   └── test_frontend.js
 └── CONTRIBUTING.md
-```
 
 ### **Explanation of Key Components**
 - **LICENSE:** Specifies usage terms and your custom license, highlighting that the project and IP belong to you.
