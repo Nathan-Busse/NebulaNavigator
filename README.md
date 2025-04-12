@@ -1,5 +1,4 @@
-![repo_cover_art](https://github.com/user-attachments/assets/420f8c59-62c0-4582-8c6f-cb3457088953)
-
+![repo_cover_art](https://github.com/user-attachments/assets/487d8ce5-8b32-4d3d-9dd6-1cea75825c03)
 
 ---
 # Nebula Navigator
