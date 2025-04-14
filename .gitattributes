@@ -1,1 +1,109 @@
-*.psd filter=lfs diff=lfs merge=lfs -text
+#----------------------------
+# Unity Scene and Asset Files
+#----------------------------
+*.unity                filter=lfs diff=lfs merge=lfs -text
+*.prefab               filter=lfs diff=lfs merge=lfs -text
+*.asset                filter=lfs diff=lfs merge=lfs -text
+*.controller           filter=lfs diff=lfs merge=lfs -text
+*.anim                 filter=lfs diff=lfs merge=lfs -text
+*.dylib                 filter=lfs diff=lfs merge=lfs -text
+*.rsp                 filter=lfs diff=lfs merge=lfs -text
+*.anim                 filter=lfs diff=lfs merge=lfs -text
+*.uss                 filter=lfs diff=lfs merge=lfs -text
+*.buginfo                 filter=lfs diff=lfs merge=lfs -text
+*.uxml                 filter=lfs diff=lfs merge=lfs -text
+*.svg                 filter=lfs diff=lfs merge=lfs -text
+*.info                 filter=lfs diff=lfs merge=lfs -text
+*.mat                 filter=lfs diff=lfs merge=lfs -text
+*.lighting                 filter=lfs diff=lfs merge=lfs -text
+*.terrainlayer                 filter=lfs diff=lfs merge=lfs -text
+*.asmref                 filter=lfs diff=lfs merge=lfs -text
+*.vsconfig                 filter=lfs diff=lfs merge=lfs -text
+*.footignore                 filter=lfs diff=lfs merge=lfs -text
+
+
+
+
+
+
+
+
+
+#----------------------------
+# 3D Model Files
+#----------------------------
+*.fbx                  filter=lfs diff=lfs merge=lfs -text
+*.obj                  filter=lfs diff=lfs merge=lfs -text
+*.dae                  filter=lfs diff=lfs merge=lfs -text
+
+#----------------------------
+# Textures and Image Files
+#----------------------------
+*.png                  filter=lfs diff=lfs merge=lfs -text
+*.jpg                  filter=lfs diff=lfs merge=lfs -text
+*.jpeg                 filter=lfs diff=lfs merge=lfs -text
+*.tga                  filter=lfs diff=lfs merge=lfs -text
+*.psd                  filter=lfs diff=lfs merge=lfs -text
+*.bmp                  filter=lfs diff=lfs merge=lfs -text
+*.exr                  filter=lfs diff=lfs merge=lfs -text
+
+#----------------------------
+# Audio Files
+#----------------------------
+*.mp3                  filter=lfs diff=lfs merge=lfs -text
+*.wav                  filter=lfs diff=lfs merge=lfs -text
+*.ogg                  filter=lfs diff=lfs merge=lfs -text
+
+#----------------------------
+# Video Files
+#----------------------------
+*.mp4                  filter=lfs diff=lfs merge=lfs -text
+*.mov                  filter=lfs diff=lfs merge=lfs -text
+*.avi                  filter=lfs diff=lfs merge=lfs -text
+
+#----------------------------
+# Code, Scripts, and Shader Files
+#----------------------------
+*.cs                   filter=lfs diff=lfs merge=lfs -text
+*.js                   filter=lfs diff=lfs merge=lfs -text
+*.shader               filter=lfs diff=lfs merge=lfs -text
+*.cg                   filter=lfs diff=lfs merge=lfs -text
+*.yml                 filter=lfs diff=lfs merge=lfs -text
+*.CS                 filter=lfs diff=lfs merge=lfs -text
+
+
+#----------------------------
+# Compiled Libraries and Plugins
+#----------------------------
+*.dll                  filter=lfs diff=lfs merge=lfs -text
+
+#----------------------------
+# Unity Meta Files and Other Configurations
+#----------------------------
+*.meta                 filter=lfs diff=lfs merge=lfs -text
+
+#----------------------------
+# Other Configuration and Data Files
+#----------------------------
+*.txt                  filter=lfs diff=lfs merge=lfs -text
+*.json                 filter=lfs diff=lfs merge=lfs -text
+*.xml                  filter=lfs diff=lfs merge=lfs -text
+*.ini                  filter=lfs diff=lfs merge=lfs -text
+*.cfg                  filter=lfs diff=lfs merge=lfs -text
+*.md                 filter=lfs diff=lfs merge=lfs -text
+
+
+#----------------------------
+# Additional Asset File Types
+#----------------------------
+*.animClip             filter=lfs diff=lfs merge=lfs -text
+*.controllerGraph      filter=lfs diff=lfs merge=lfs -text
+*.asmdef               filter=lfs diff=lfs merge=lfs -text
+*.ttf                  filter=lfs diff=lfs merge=lfs -text
+*.otf                  filter=lfs diff=lfs merge=lfs -text
+
+#----------------------------
+# Any Other File Extensions (Optional)
+#----------------------------
+# Uncomment the following line to track every file in the repository using LFS.
+# *                    filter=lfs diff=lfs merge=lfs -text
