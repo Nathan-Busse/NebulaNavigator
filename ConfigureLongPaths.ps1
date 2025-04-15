@@ -14,6 +14,24 @@
 #       --> If the user inputs yes, the script will restart the system.
 #       --> If the user inputs no, the script will exit without restarting.
 #
+
+# If the current process execution policy is not Bypass, relaunch the script with the Bypass flag.
+if ((Get-ExecutionPolicy -Scope Process) -ne 'Bypass') {
+    Write-Host "Relaunching script with -ExecutionPolicy Bypass..."
+    powershell.exe -NoProfile -ExecutionPolicy Bypass -File $MyInvocation.MyCommand.Path @args
+    exit
+}
+
+#--------------------------------------------------BEGIN--------------------------------------------------------
+# This script configures long paths in Windows 10 and later.
+# It enables long paths in the registry and applies group policy changes.
+# It checks if the system is running Windows 10 or later before making changes.
+# Administrative privileges are required, and the script will prompt accordingly.
+#
+# After making the necessary changes, the script will prompt the user to restart the system
+# for the changes to take effect.
+#   - If the user inputs "Y", the script will restart the system.
+#   - If the user inputs "N", the script will exit without restarting.
 #--------------------------------------------------BEGIN--------------------------------------------------------
 
 # Function to check for administrative privileges.
@@ -56,6 +74,7 @@ try {
 }
 
 Write-Host ""
+
 # Prompt the user to restart the PC for the change to take effect.
 $restartChoice = Read-Host "Would you like to restart your PC now? (Y/N)"
 if ($restartChoice -match "^[Yy]$") {
