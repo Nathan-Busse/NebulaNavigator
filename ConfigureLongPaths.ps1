@@ -1,4 +1,5 @@
 # |------------------------------------------DO NOT IGNORE---------------------------------------------------|
+# |  Make sure that you are using POWERSHELL 7.0 or higher.                                                  |
 # |  This script must run with Administrator privileges to execute properly.                                 |
 # |  It will auto-relaunch as Administrator if needed, and set its working directory correctly.              |
 # |----------------------------------------------------------------------------------------------------------|
