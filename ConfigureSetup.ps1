@@ -8,7 +8,7 @@
 # - Automatically restarting with Administrator privileges if required.
 # - Automatically changing the working directory to the script's location.
 # - Configuring Git to support long paths globally.
-# - Automating Git staging, commit, and push operations.
+# - Automating Git commit and push operations.
 # - Enabling Windows Long Path Support via registry and group policy.
 
 # ---------------------------------------------------CHANGELOG------------------------------------------------------
@@ -16,7 +16,7 @@
 # v1.1.0 - Added automatic relaunch as Administrator using Start-Process with -Verb RunAs.
 # v1.2.0 - Improved handling of working directories with $PSScriptRoot.
 # v1.3.0 - Enhanced compatibility for running outside of VS Code.
-# v1.4.0 - Introduced countdown timer before exiting for user confirmation.
+# v1.4.0 - Added countdown timer before resuming for user clarity.
 # ---------------------------------------------------BEGIN---------------------------------------------------------
 
 # Step 0: Auto-relaunch with Administrator privileges if not already elevated.
@@ -114,12 +114,14 @@ try {
     exit
 }
 
-# Step 6: Countdown before exiting to ensure user sees final messages.
-Write-Host "`nExiting script in:" -ForegroundColor Yellow
+# Step 6: Countdown before resuming program to ensure user sees final messages.
+Write-Host "`nResuming program in:" -ForegroundColor Yellow
 For ($i = 10; $i -ge 1; $i--) {
     Write-Host "$i seconds remaining..." -ForegroundColor Cyan
     Start-Sleep -Seconds 1
 }
-Write-Host "Goodbye! Script has completed." -ForegroundColor Green
-exit
+Write-Host "Program will now resume!" -ForegroundColor Green
+
+# Program continues here (add any other subsequent logic or execution steps).
+Write-Host "`nSetup process completed successfully. Ready for the next steps!" -ForegroundColor Green
 # --------------------------------------------------------END--------------------------------------------------------
