@@ -20,10 +20,6 @@ Nebula Navigator is an AI-powered interactive tool that transforms code reposito
     - [Environment Setup (Windows)](#environment-setup-windows)
     - [Backend Setup](#backend-setup)
     - [Frontend Setup](#frontend-setup)
-  - [Scripts](#scripts)
-    - [ConfigurePathLength.ps1](#configurepathlengthps1)
-    - [ManageGitCommit.ps1](#managegitcommitps1)
-    - [ConfigureSetup.ps1](#configuresetupps1)
   - [Usage](#usage)
   - [Roadmap \& Future Enhancements](#roadmap--future-enhancements)
   - [License](#license)
@@ -113,7 +109,28 @@ _For an in-depth architectural overview, refer to the documentation in `docs/arc
        .\ConfigurePathLength.ps1
        ```
 
-This script updates registry settings, refreshes group policies, and optionally restarts your system to enable long file paths—a prerequisite for handling deeply nested structures.
+ **Purpose**: This script updates registry settings, refreshes group policies, and optionally restarts your system to enable long file paths—a prerequisite for handling deeply nested structures.
+
+**Important:** If you’re running this project on Windows, our deep Unity project structure may trigger file path length issues. To prevent this and ensure a smooth setup, use the provided PowerShell script:
+
+2. **Run `ManageGitCommit.ps1`:**
+   - Double-click the script file to execute it.  
+   - Alternatively, if PowerShell 7 is not installed, launch the script manually:  
+     - Open PowerShell with administrative privileges.
+     - Navigate to the repository folder:
+       ```powershell
+       cd path\to\NebulaNavigator
+       ```
+     - Execute the script:
+       ```powershell
+       .\ManageGitCommit.ps1
+       ```
+
+ **Purpose**: Automates Git operations, including staging, committing, and pushing changes while enabling long path support.
+- **Key Features**:
+  - Configures Git settings to support long paths globally.
+  - Prompts the user for commit messages.
+  - Includes a countdown timer before resuming program execution.
 
 ### Backend Setup
 
@@ -147,31 +164,6 @@ This script updates registry settings, refreshes group policies, and optionally 
 
 ---
 
-## Scripts
-
-### ConfigurePathLength.ps1
-- **Purpose**: Enables Windows long path support by updating registry settings and group policy.
-- **Key Features**:
-  - Checks for administrative privileges.
-  - Auto-restarts as Administrator if required.
-  - Prompts the user for system restart after configuration.
-
-### ManageGitCommit.ps1
-- **Purpose**: Automates Git operations, including staging, committing, and pushing changes while enabling long path support.
-- **Key Features**:
-  - Configures Git settings to support long paths globally.
-  - Prompts the user for commit messages.
-  - Includes a countdown timer before resuming program execution.
-
-### ConfigureSetup.ps1
-- **Purpose**: Combines Git and Windows long path configurations into a single script.
-- **Key Features**:
-  - Runs Git operations (commit, push) and long path setup in sequence.
-  - Includes countdown timer before resuming program execution.
-  - Ensures administrative privileges and proper working directory management.
-
----
-
 ## Usage
 
 - **3D Exploration:**  
@@ -189,6 +181,12 @@ This script updates registry settings, refreshes group policies, and optionally 
 ---
 
 ## Roadmap & Future Enhancements
+
+**ConfigureSetup.ps1**
+- Combines Git and Windows long path configurations into a single script.
+  - Runs Git operations (commit, push) and long path setup in sequence.
+  - Includes countdown timer before resuming program execution.
+  - Ensures administrative privileges and proper working directory management.
 
 - **Enhanced AI Models:**  
   Further improve code quality assessment and anomaly detection.
