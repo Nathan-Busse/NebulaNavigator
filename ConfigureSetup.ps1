@@ -32,11 +32,8 @@ if (-not (Test-Admin)) {
         Start-Process -FilePath "powershell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
         Write-Host "Waiting 10 seconds before exiting to allow the relaunch process to start..." -ForegroundColor Yellow
         Start-Sleep -Seconds 10
-        exit
     } catch {
         Write-Error "Failed to relaunch as Administrator. Please manually run this script with Administrator privileges."
-        Start-Sleep -Seconds 10
-        exit
     }
 }
 
@@ -46,8 +43,6 @@ try {
     Write-Host "Changed directory to the script's location: $PSScriptRoot"
 } catch {
     Write-Error "Failed to change directory to the script's location. Check if the script path is accessible."
-    Start-Sleep -Seconds 10
-    exit
 }
 
 # Step 2: Configure Git's long path support globally.
@@ -56,8 +51,6 @@ try {
     $gitCommand = Get-Command git -ErrorAction SilentlyContinue
     if (-not $gitCommand) {
         Write-Error "Git is not installed on this system. Please install Git and re-run this script."
-        Start-Sleep -Seconds 10
-        exit
     }
 
     Write-Host "Enabling Git's long path support globally..."
@@ -65,8 +58,6 @@ try {
     Write-Host "Git global long path support enabled successfully." -ForegroundColor Green
 } catch {
     Write-Error "Failed to enable Git's long path support globally. Please ensure Git is installed."
-    Start-Sleep -Seconds 10
-    exit
 }
 
 # Step 3: Automate Git commit and push operations.
@@ -74,8 +65,6 @@ try {
     $commitMsg = Read-Host "Enter your commit message"
     if ([string]::IsNullOrWhiteSpace($commitMsg)) {
         Write-Error "Commit message cannot be empty. Exiting..."
-        Start-Sleep -Seconds 10
-        exit
     }
 
     Write-Host "Staging all changes..."
@@ -88,9 +77,15 @@ try {
     Write-Host "`nGit operations complete. Your changes are now live!" -ForegroundColor Green
 } catch {
     Write-Error "Failed during Git commit/push operations. Please check your repository settings."
-    Start-Sleep -Seconds 10
-    exit
-}
+    
+    Write-Host "`nResuming program in:" -ForegroundColor Yellow
+    For ($i = 10; $i -ge 1; $i--) {
+        Write-Host "$i seconds remaining..." -ForegroundColor Cyan
+        Start-Sleep -Seconds 1
+    }
+    Write-Host "Program will now resume!" -ForegroundColor Green
+
+    }
 
 # Step 4: Enable Windows Long Path Support by modifying the registry.
 try {
@@ -100,7 +95,6 @@ try {
 } catch {
     Write-Error "Failed to modify the registry. Ensure you have administrative privileges."
     Start-Sleep -Seconds 10
-    exit
 }
 
 # Step 5: Update group policy to apply the changes.
@@ -111,16 +105,7 @@ try {
 } catch {
     Write-Error "Failed to update group policy. Please ensure your system supports group policy updates."
     Start-Sleep -Seconds 10
-    exit
 }
-
-# Step 6: Countdown before resuming program to ensure user sees final messages.
-Write-Host "`nResuming program in:" -ForegroundColor Yellow
-For ($i = 10; $i -ge 1; $i--) {
-    Write-Host "$i seconds remaining..." -ForegroundColor Cyan
-    Start-Sleep -Seconds 1
-}
-Write-Host "Program will now resume!" -ForegroundColor Green
 
 # Program continues here (add any other subsequent logic or execution steps).
 Write-Host "`nSetup process completed successfully. Ready for the next steps!" -ForegroundColor Green
