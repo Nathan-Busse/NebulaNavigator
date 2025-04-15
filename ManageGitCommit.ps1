@@ -15,6 +15,7 @@
 # v1.1.0 - Added automatic relaunch as Administrator using Start-Process with -Verb RunAs.
 # v1.2.0 - Improved handling of working directories with $PSScriptRoot.
 # v1.3.0 - Enhanced compatibility for running outside of VS Code.
+# v1.4.0 - Introduced 10-second delay before exiting for user confirmation.
 # ---------------------------------------------------BEGIN---------------------------------------------------------
 
 # Step 0: Auto-relaunch with Administrator privileges if not already elevated.
@@ -44,6 +45,7 @@ try {
     Write-Host "Changed directory to the script's location: $PSScriptRoot"
 } catch {
     Write-Error "Failed to change directory to the script's location. Check if the script path is accessible."
+    Start-Sleep -Seconds 10
     exit
 }
 
@@ -54,6 +56,7 @@ try {
     Write-Host "Git global long path support enabled successfully." -ForegroundColor Green
 } catch {
     Write-Error "Failed to enable Git's long path support globally. Please ensure Git is installed."
+    Start-Sleep -Seconds 10
     exit
 }
 
@@ -62,6 +65,7 @@ try {
     $commitMsg = Read-Host "Enter your commit message"
     if ([string]::IsNullOrWhiteSpace($commitMsg)) {
         Write-Error "Commit message cannot be empty. Exiting..."
+        Start-Sleep -Seconds 10
         exit
     }
 
@@ -75,6 +79,12 @@ try {
     Write-Host "`nGit operations complete. Your changes are now live!" -ForegroundColor Green
 } catch {
     Write-Error "Failed during Git commit/push operations. Please check your repository settings."
+    Start-Sleep -Seconds 10
     exit
 }
+
+# Step 4: Delay before exiting to ensure user sees final messages.
+Write-Host "`nExiting script in 10 seconds... Please review the output above." -ForegroundColor Yellow
+Start-Sleep -Seconds 10
+exit
 # --------------------------------------------------------END--------------------------------------------------------
