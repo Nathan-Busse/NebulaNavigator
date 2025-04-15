@@ -202,7 +202,7 @@ This script updates registry settings, refreshes group policies, and optionally 
 - **Extended Platform Support:**  
   Expand compatibility with additional version control and CI/CD platforms.
 
-_For more detailed plans, consult `docs/roadmap.md`._
+_For more detailed plans, consult:_ `docs/roadmap.md`.
 
 ---
 
