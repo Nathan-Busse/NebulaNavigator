@@ -1,15 +1,10 @@
-Below is the modified **README.md** that includes an additional section for environment setup—highlighting your custom script (**ConfigureLongPaths.ps1**) to automatically configure Windows long path support for those replicating the setup.
-
----
-
 ![repo_cover_art](https://github.com/user-attachments/assets/487d8ce5-8b32-4d3d-9dd6-1cea75825c03)
 
 ---
+
 # Nebula Navigator
 
-Nebula Navigator is an AI-powered interactive tool that transforms code repository analysis into an immersive 3D experience. By visualizing your code as a dynamic galaxy, the tool provides cutting-edge insights into code quality, structure, and dependencies. Its core features—such as vector terrain rendering using Perlin noise and real-time AI-driven analysis—enable seamless navigation and deep understanding of complex codebases. Here is an example of the UI concept I envision...
-
-![ui_interface_concept](https://github.com/user-attachments/assets/fe728ab0-3c78-47db-809e-64be027ef2f9)
+Nebula Navigator is an AI-powered interactive tool that transforms code repository analysis into an immersive 3D experience. By visualizing your code as a dynamic galaxy, the tool provides cutting-edge insights into code quality, structure, and dependencies. Its core features—such as vector terrain rendering using Perlin noise and real-time AI-driven analysis—enable seamless navigation and deep understanding of complex codebases.
 
 ---
 
@@ -25,6 +20,10 @@ Nebula Navigator is an AI-powered interactive tool that transforms code reposito
     - [Environment Setup (Windows)](#environment-setup-windows)
     - [Backend Setup](#backend-setup)
     - [Frontend Setup](#frontend-setup)
+  - [Scripts](#scripts)
+    - [ConfigurePathLength.ps1](#configurepathlengthps1)
+    - [ManageGitCommit.ps1](#managegitcommitps1)
+    - [ConfigureSetup.ps1](#configuresetupps1)
   - [Usage](#usage)
   - [Roadmap \& Future Enhancements](#roadmap--future-enhancements)
   - [License](#license)
@@ -99,12 +98,9 @@ _For an in-depth architectural overview, refer to the documentation in `docs/arc
 
 ### Environment Setup (Windows)
 
-**Important:** If you’re running this project on Windows, our deep Unity project structure may trigger file path length issues. To prevent this and to ensure a smooth setup, run the provided PowerShell script:
+**Important:** If you’re running this project on Windows, our deep Unity project structure may trigger file path length issues. To prevent this and ensure a smooth setup, use the provided PowerShell script:
 
-1. **Download/Locate the Script:**  
-   Ensure you have the `ConfigureLongPaths.ps1` file from the repository root.
-
-2. **Run as Administrator:**  
+1. **Run `ConfigurePathLength.ps1`:**
    - Open PowerShell with administrative privileges.
    - Navigate to the repository folder:
      ```powershell
@@ -112,11 +108,10 @@ _For an in-depth architectural overview, refer to the documentation in `docs/arc
      ```
    - Execute the script:
      ```powershell
-     .\ConfigureLongPaths.ps1
+     .\ConfigurePathLength.ps1
      ```
-   - Follow the on-screen prompts. The script will update the registry settings, update group policy, and optionally, restart your PC.
 
-This step ensures that Windows is configured to support longer file paths—a key prerequisite for handling our project’s deeply nested structures.
+This script updates registry settings, refreshes group policies, and optionally restarts your system to enable long file paths—a prerequisite for handling deeply nested structures.
 
 ### Backend Setup
 
@@ -144,9 +139,34 @@ This step ensures that Windows is configured to support longer file paths—a ke
 
 ### Frontend Setup
 
-1. **Open the Frontend:**
-   - Navigate to `src/frontend`.
+1. **Open the Frontend:**  
+   - Navigate to `src/frontend`.  
    - Open `index.html` in your preferred web browser (Chrome, Firefox, Edge, etc.).
+
+---
+
+## Scripts
+
+### ConfigurePathLength.ps1
+- **Purpose**: Enables Windows long path support by updating registry settings and group policy.
+- **Key Features**:
+  - Checks for administrative privileges.
+  - Auto-restarts as Administrator if required.
+  - Prompts the user for system restart after configuration.
+
+### ManageGitCommit.ps1
+- **Purpose**: Automates Git operations, including staging, committing, and pushing changes while enabling long path support.
+- **Key Features**:
+  - Configures Git settings to support long paths globally.
+  - Prompts the user for commit messages.
+  - Includes a countdown timer before resuming program execution.
+
+### ConfigureSetup.ps1
+- **Purpose**: Combines Git and Windows long path configurations into a single script.
+- **Key Features**:
+  - Runs Git operations (commit, push) and long path setup in sequence.
+  - Includes countdown timer before resuming program execution.
+  - Ensures administrative privileges and proper working directory management.
 
 ---
 
@@ -207,5 +227,3 @@ For questions, suggestions, or further collaboration, please reach out to:
 ---
 
 Nebula Navigator – Transform your code repositories into an interactive universe of insights.
-
----
