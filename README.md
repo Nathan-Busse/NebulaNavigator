@@ -101,15 +101,17 @@ _For an in-depth architectural overview, refer to the documentation in `docs/arc
 **Important:** If you’re running this project on Windows, our deep Unity project structure may trigger file path length issues. To prevent this and ensure a smooth setup, use the provided PowerShell script:
 
 1. **Run `ConfigurePathLength.ps1`:**
-   - Open PowerShell with administrative privileges.
-   - Navigate to the repository folder:
-     ```powershell
-     cd path\to\NebulaNavigator
-     ```
-   - Execute the script:
-     ```powershell
-     .\ConfigurePathLength.ps1
-     ```
+   - Double-click the script file to execute it.  
+   - Alternatively, if PowerShell 7 is not installed, launch the script manually:  
+     - Open PowerShell with administrative privileges.
+     - Navigate to the repository folder:
+       ```powershell
+       cd path\to\NebulaNavigator
+       ```
+     - Execute the script:
+       ```powershell
+       .\ConfigurePathLength.ps1
+       ```
 
 This script updates registry settings, refreshes group policies, and optionally restarts your system to enable long file paths—a prerequisite for handling deeply nested structures.
 
@@ -206,7 +208,7 @@ _For more detailed plans, consult `docs/roadmap.md`._
 
 ## License
 
-Nebula Navigator is released under the [Nebula Navigator Professional License (NNPL) Version 1.0](LICENSE).
+Nebula Navigator is released under the [Nebula Navigator Professional License (NNPL) Version 1.0](LICENSE.md).
 
 ---
 
