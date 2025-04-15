@@ -15,7 +15,7 @@
 # v1.1.0 - Added automatic relaunch as Administrator using Start-Process with -Verb RunAs.
 # v1.2.0 - Improved handling of working directories with $PSScriptRoot.
 # v1.3.0 - Enhanced compatibility for running outside of VS Code.
-# v1.4.0 - Introduced 10-second delay before exiting for user confirmation.
+# v1.4.0 - Introduced countdown timer before exiting for user confirmation.
 # ---------------------------------------------------BEGIN---------------------------------------------------------
 
 # Step 0: Auto-relaunch with Administrator privileges if not already elevated.
@@ -83,8 +83,12 @@ try {
     exit
 }
 
-# Step 4: Delay before exiting to ensure user sees final messages.
-Write-Host "`nExiting script in 10 seconds... Please review the output above." -ForegroundColor Yellow
-Start-Sleep -Seconds 10
+# Step 4: Countdown before exiting to ensure user sees final messages.
+Write-Host "`nExiting script in:" -ForegroundColor Yellow
+For ($i = 10; $i -ge 1; $i--) {
+    Write-Host "$i seconds remaining..." -ForegroundColor Cyan
+    Start-Sleep -Seconds 1
+}
+Write-Host "Goodbye! Script has completed." -ForegroundColor Green
 exit
 # --------------------------------------------------------END--------------------------------------------------------
