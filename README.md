@@ -83,7 +83,7 @@ The project is divided into three core components:
    - Provides an intuitive control panel for filtering, searching, and settings adjustments  
    - Displays detailed overlays with repository insights when nodes are selected
 
-_For an in-depth architectural overview, refer to the documentation in `docs/architecture.md`._
+For an in-depth architectural overview, refer to the documentation in `docs/architecture.md`.
 
 ---
 
