@@ -1,8 +1,10 @@
+# Nebula Navigator
+
 ![repo_cover_art](https://github.com/user-attachments/assets/487d8ce5-8b32-4d3d-9dd6-1cea75825c03)
 
 ---
 
-# Nebula Navigator
+## Overview
 
 Nebula Navigator is an AI-powered interactive tool that transforms code repository analysis into an immersive 3D experience. By visualizing your code as a dynamic galaxy, the tool provides cutting-edge insights into code quality, structure, and dependencies. Its core features—such as vector terrain rendering using Perlin noise and real-time AI-driven analysis—enable seamless navigation and deep understanding of complex codebases.
 
@@ -11,8 +13,8 @@ Nebula Navigator is an AI-powered interactive tool that transforms code reposito
 ## Table of Contents
 
 - [Nebula Navigator](#nebula-navigator)
-  - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Technology Stack](#technology-stack)
   - [Project Architecture](#project-architecture)
@@ -22,15 +24,10 @@ Nebula Navigator is an AI-powered interactive tool that transforms code reposito
     - [Frontend Setup](#frontend-setup)
   - [Usage](#usage)
   - [Roadmap \& Future Enhancements](#roadmap--future-enhancements)
+    - [ConfigureSetup.ps1](#configuresetupps1)
   - [License](#license)
   - [Contributing](#contributing)
   - [Contact](#contact)
-
----
-
-## Overview
-
-Nebula Navigator reimagines the way developers explore code repositories. It converts static code data into a visually engaging 3D galaxy where each node represents a file or module, and their interconnections reveal dependencies and architectural nuances. With AI-driven code analysis and an optional vector terrain overlay using Perlin noise, this tool empowers developers to quickly spot issues, track changes, and optimize project structure.
 
 ---
 
@@ -101,10 +98,13 @@ _For an in-depth architectural overview, refer to the documentation in `docs/arc
    - Alternatively, if PowerShell 7 is not installed, launch the script manually:  
      - Open PowerShell with administrative privileges.
      - Navigate to the repository folder:
+
        ```powershell
        cd path\to\NebulaNavigator
        ```
+
      - Execute the script:
+
        ```powershell
        .\ConfigurePathLength.ps1
        ```
@@ -113,20 +113,24 @@ _For an in-depth architectural overview, refer to the documentation in `docs/arc
 
 **Important:** If you’re running this project on Windows, our deep Unity project structure may trigger file path length issues. To prevent this and ensure a smooth setup, use the provided PowerShell script:
 
-2. **Run `ManageGitCommit.ps1`:**
+1. **Run `ManageGitCommit.ps1`:**
    - Double-click the script file to execute it.  
    - Alternatively, if PowerShell 7 is not installed, launch the script manually:  
      - Open PowerShell with administrative privileges.
      - Navigate to the repository folder:
+
        ```powershell
        cd path\to\NebulaNavigator
        ```
+
      - Execute the script:
+
        ```powershell
        .\ManageGitCommit.ps1
        ```
 
  **Purpose**: Automates Git operations, including staging, committing, and pushing changes while enabling long path support.
+
 - **Key Features**:
   - Configures Git settings to support long paths globally.
   - Prompts the user for commit messages.
@@ -135,23 +139,27 @@ _For an in-depth architectural overview, refer to the documentation in `docs/arc
 ### Backend Setup
 
 1. **Clone the Repository:**
+
    ```bash
    git clone https://github.com/Nathan-Busse/NebulaNavigator.git
    cd NebulaNavigator/src/backend
    ```
 
 2. **Create and Activate a Virtual Environment:**
+
    ```bash
    python -m venv venv
    source venv/bin/activate      # On Windows: venv\Scripts\activate
    ```
 
 3. **Install Dependencies:**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Run the Application:**
+
    ```bash
    python app.py
    ```
@@ -182,7 +190,8 @@ _For an in-depth architectural overview, refer to the documentation in `docs/arc
 
 ## Roadmap & Future Enhancements
 
-**ConfigureSetup.ps1**
+### ConfigureSetup.ps1
+
 - Combines Git and Windows long path configurations into a single script.
   - Runs Git operations (commit, push) and long path setup in sequence.
   - Includes countdown timer before resuming program execution.
@@ -221,7 +230,7 @@ Contributions are welcome! Please review our [CONTRIBUTING.md](CONTRIBUTING.md) 
 For questions, suggestions, or further collaboration, please reach out to:
 
 - **Name/Company:** Nathan Busse  
-- **Email:** bussenathan@icloud.com  
+- **Email:** <bussenathan@icloud.com>  
 - **GitHub:** [https://github.com/Nathan-Busse](https://github.com/Nathan-Busse)
 
 ---

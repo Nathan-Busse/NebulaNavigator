@@ -1,6 +1,13 @@
 from flask import Flask, jsonify
 from flask_mysqldb import MySQL
 from config import MYSQL_HOST, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DB
+from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -13,6 +20,14 @@ app.config['MYSQL_DB'] = MYSQL_DB
 
 # Initialize MySQL
 mysql = MySQL(app)
+
+# Initialize MongoDB client
+mongo_client = MongoClient(MONGO_URI)
+
+# Example: Access a database and collection
+db = mongo_client["code_analysis"]
+code_files_collection = db["code_files"]
+analysis_results_collection = db["analysis_results"]
 
 @app.route('/')
 def index():
@@ -45,5 +60,20 @@ def init_db():
 
         mysql.connection.commit()
         return jsonify({"message": "Database and tables initialized successfully."})
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+# Create a route to initialize MongoDB collections
+@app.route('/init_mongo', methods=['GET'])
+def init_mongo():
+    try:
+        # Ensure collections exist by inserting a dummy document and deleting it
+        code_files_collection.insert_one({"dummy": True})
+        code_files_collection.delete_one({"dummy": True})
+
+        analysis_results_collection.insert_one({"dummy": True})
+        analysis_results_collection.delete_one({"dummy": True})
+
+        return jsonify({"message": "MongoDB collections initialized successfully."})
     except Exception as e:
         return jsonify({"error": str(e)})
