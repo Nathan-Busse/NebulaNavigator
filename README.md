@@ -10,7 +10,7 @@ Nebula Navigator is an AI-powered interactive tool that transforms code reposito
 
 NebulaNavigator is an idea imspired from the map orb Jim Hawkins used to find Nathanial Flints' trove in the movie version of Treasure Planet:
 
-https://github.com/user-attachments/assets/64da5730-fbf6-4de0-9321-1b733eb20563
+[Jim Hawkins' map orb inspiration](https://github.com/user-attachments/assets/64da5730-fbf6-4de0-9321-1b733eb20563)
 
 Unfortunatly, unlike its fictional muse it wont lead to treasure but instead leads to a more efficeint and proactive developement environment.
 
