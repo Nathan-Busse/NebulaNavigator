@@ -8,7 +8,7 @@
 
 Nebula Navigator is an AI-powered interactive tool that transforms code repository analysis into an immersive 3D experience. By visualizing your code as a dynamic galaxy, the tool provides cutting-edge insights into code quality, structure, and dependencies. Its core features—such as vector terrain rendering using Perlin noise and real-time AI-driven analysis—enable seamless navigation and deep understanding of complex codebases.
 
-For a non-technical description of NebulaNavigator it is the same as map orb in mobie version of Treasure Planet:
+NebulaNavigator is an idea imspired from the map orb Jim Hawkins used to find Nathanial Flints' trove in the movie version of Treasure Planet:
 
 https://github.com/user-attachments/assets/64da5730-fbf6-4de0-9321-1b733eb20563
 
