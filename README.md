@@ -6,13 +6,13 @@
 
 ## Overview
 
-Nebula Navigator is an AI-powered interactive tool that transforms code repository analysis into an immersive 3D experience. By visualizing your code as a dynamic galaxy, the tool provides cutting-edge insights into code quality, structure, and dependencies. Its core features—such as vector terrain rendering using Perlin noise and real-time AI-driven analysis—enable seamless navigation and deep understanding of complex codebases.
+Nebula Navigator is an AI-powered interactive tool that transforms code repository analysis into an immersive 3D experience. By visualizing your code as a dynamic galaxy, the tool provides cutting-edge insights into code quality, structure, and dependencies. Its core features—such as vector terrain rendering using Perlin noise and real-time AI-driven analysis—enable seamless navigation and a deeper understanding of complex codebases.
 
-NebulaNavigator is an idea imspired from the map orb Jim Hawkins used to find Nathanial Flints' trove in the movie version of Treasure Planet:
+Nebula Navigator is an idea inspired by the map orb Jim Hawkins used to find Nathanial Flint's trove in the movie version of *Treasure Planet*:
 
 [Jim Hawkins' map orb inspiration](https://github.com/user-attachments/assets/64da5730-fbf6-4de0-9321-1b733eb20563)
 
-Unfortunatly, unlike its fictional muse it wont lead to treasure but instead leads to a more efficeint and proactive developement environment.
+Unfortunately, unlike its fictional muse, it won't lead to treasure, but it paves the way for a more efficient and proactive development environment.
 
 ---
 
@@ -24,12 +24,12 @@ Unfortunatly, unlike its fictional muse it wont lead to treasure but instead lea
   - [Features](#features)
   - [Technology Stack](#technology-stack)
   - [Project Architecture](#project-architecture)
-  - [Installation \& Setup](#installation--setup)
+  - [Installation & Setup](#installation--setup)
     - [Environment Setup (Windows)](#environment-setup-windows)
     - [Backend Setup](#backend-setup)
     - [Frontend Setup](#frontend-setup)
   - [Usage](#usage)
-  - [Roadmap \& Future Enhancements](#roadmap--future-enhancements)
+  - [Roadmap & Future Enhancements](#roadmap--future-enhancements)
     - [ConfigureSetup.ps1](#configuresetupps1)
   - [License](#license)
   - [Contributing](#contributing)
@@ -46,7 +46,7 @@ Unfortunatly, unlike its fictional muse it wont lead to treasure but instead lea
   Automatically analyze code quality, detect potential issues, and receive actionable recommendations.
 
 - **Vector Terrain Generation:**  
-  Use a Perlin noise algorithm to create a vector terrain overlay that abstractly represents repository health and activity density.
+  Uses a Perlin noise algorithm to create a vector terrain overlay that abstractly represents repository health and activity density.
 
 - **Responsive & Accessible UI:**  
   Designed to work seamlessly with mouse and touch inputs across devices.
@@ -89,7 +89,7 @@ The project is divided into three core components:
    - Provides an intuitive control panel for filtering, searching, and settings adjustments  
    - Displays detailed overlays with repository insights when nodes are selected
 
-For an in-depth architectural overview, refer to the [architecture documentation](docs/architecture.md)
+For an in-depth architectural overview, refer to the [architecture documentation](docs/architecture.md).
 
 ---
 
@@ -97,47 +97,39 @@ For an in-depth architectural overview, refer to the [architecture documentation
 
 ### Environment Setup (Windows)
 
-**Important:** If you’re running this project on Windows, our deep Unity project structure may trigger file path length issues. To prevent this and ensure a smooth setup, use the provided PowerShell script:
+**Important:** If you’re running this project on Windows, our deep Unity project structure may trigger file path length issues. To prevent this and ensure a smooth setup, use the provided PowerShell scripts.
 
-1. **Run `ConfigurePathLength.ps1`:**
-   - Double-click the script file to execute it.  
-   - Alternatively, if PowerShell 7 is not installed, launch the script manually:  
-     - Open PowerShell with administrative privileges.
-     - Navigate to the repository folder:
+#### Run `ConfigurePathLength.ps1`:
+- **Double-click** the script file to execute it.
+- **Alternatively**, if PowerShell 7 is not installed, launch the script manually:
+  - Open PowerShell with administrative privileges.
+  - Navigate to the repository folder:
+    ```powershell
+    cd path\to\NebulaNavigator
+    ```
+  - Execute the script:
+    ```powershell
+    .\ConfigurePathLength.ps1
+    ```
+  
+**Purpose:** This script updates registry settings, refreshes group policies, and optionally restarts your system to enable long file paths—a prerequisite for handling deeply nested structures.
 
-       ```powershell
-       cd path\to\NebulaNavigator
-       ```
+#### Run `ManageGitCommit.ps1`:
+- **Double-click** the script file to execute it.
+- **Alternatively**, if PowerShell 7 is not installed, launch the script manually:
+  - Open PowerShell with administrative privileges.
+  - Navigate to the repository folder:
+    ```powershell
+    cd path\to\NebulaNavigator
+    ```
+  - Execute the script:
+    ```powershell
+    .\ManageGitCommit.ps1
+    ```
 
-     - Execute the script:
+**Purpose:** This script automates Git operations—including staging, committing, and pushing changes—while enabling long path support.
 
-       ```powershell
-       .\ConfigurePathLength.ps1
-       ```
-
- **Purpose**: This script updates registry settings, refreshes group policies, and optionally restarts your system to enable long file paths—a prerequisite for handling deeply nested structures.
-
-**Important:** If you’re running this project on Windows, our deep Unity project structure may trigger file path length issues. To prevent this and ensure a smooth setup, use the provided PowerShell script:
-
-1. **Run `ManageGitCommit.ps1`:**
-   - Double-click the script file to execute it.  
-   - Alternatively, if PowerShell 7 is not installed, launch the script manually:  
-     - Open PowerShell with administrative privileges.
-     - Navigate to the repository folder:
-
-       ```powershell
-       cd path\to\NebulaNavigator
-       ```
-
-     - Execute the script:
-
-       ```powershell
-       .\ManageGitCommit.ps1
-       ```
-
- **Purpose**: Automates Git operations, including staging, committing, and pushing changes while enabling long path support.
-
-- **Key Features**:
+- **Key Features:**
   - Configures Git settings to support long paths globally.
   - Prompts the user for commit messages.
   - Includes a countdown timer before resuming program execution.
@@ -145,35 +137,31 @@ For an in-depth architectural overview, refer to the [architecture documentation
 ### Backend Setup
 
 1. **Clone the Repository:**
-
    ```bash
    git clone https://github.com/Nathan-Busse/NebulaNavigator.git
    cd NebulaNavigator/src/backend
    ```
 
 2. **Create and Activate a Virtual Environment:**
-
    ```bash
    python -m venv venv
    source venv/bin/activate      # On Windows: venv\Scripts\activate
    ```
 
 3. **Install Dependencies:**
-
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Run the Application:**
-
    ```bash
    python app.py
    ```
 
 ### Frontend Setup
 
-1. **Open the Frontend:**  
-   - Navigate to `src/frontend`.  
+1. **Open the Frontend:**
+   - Navigate to `src/frontend`.
    - Open `index.html` in your preferred web browser (Chrome, Firefox, Edge, etc.).
 
 ---
@@ -200,7 +188,7 @@ For an in-depth architectural overview, refer to the [architecture documentation
 
 - Combines Git and Windows long path configurations into a single script.
   - Runs Git operations (commit, push) and long path setup in sequence.
-  - Includes countdown timer before resuming program execution.
+  - Includes a countdown timer before resuming program execution.
   - Ensures administrative privileges and proper working directory management.
 
 - **Enhanced AI Models:**  
@@ -215,7 +203,7 @@ For an in-depth architectural overview, refer to the [architecture documentation
 - **Extended Platform Support:**  
   Expand compatibility with additional version control and CI/CD platforms.
 
-For more detailed plans, consult: (NebulaNavigator\docs\roadmap.md).
+For more detailed plans, consult the [roadmap documentation](docs/roadmap.md).
 
 ---
 
@@ -236,9 +224,10 @@ Contributions are welcome! Please review our [CONTRIBUTING.md](CONTRIBUTING.md) 
 For questions, suggestions, or further collaboration, please reach out to:
 
 - **Name/Company:** Nathan Busse  
-- **Email:** <bussenathan@icloud.com>  
+- **Email:** bussenathan@icloud.com  
 - **GitHub:** [https://github.com/Nathan-Busse](https://github.com/Nathan-Busse)
 
 ---
 
 Nebula Navigator – Transform your code repositories into an interactive universe of insights.
+`
