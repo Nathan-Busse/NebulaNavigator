@@ -1,3 +1,4 @@
+~~~markdown
 NebulaNavigator/
 ├── LICENSE
 ├── README.md
@@ -32,3 +33,5 @@ NebulaNavigator/
 └── tests/
     ├── test_backend.py      # Backend test cases
     └── test_frontend.js     # Frontend test cases
+
+~~~
