@@ -28,6 +28,7 @@ Unfortunately, unlike its fictional muse, it won't lead to treasure, but it pave
     - [Environment Setup (Windows)](#environment-setup-windows)
     - [Backend Setup](#backend-setup)
     - [Frontend Setup](#frontend-setup)
+  - [Unity Integration](#unity-integration)
   - [Usage](#usage)
   - [Roadmap & Future Enhancements](#roadmap--future-enhancements)
     - [ConfigureSetup.ps1](#configuresetupps1)
@@ -71,6 +72,9 @@ Unfortunately, unlike its fictional muse, it won't lead to treasure, but it pave
 - **Data Processing:**  
   - NumPy and the `noise` library for Perlin noise terrain generation
 
+- **Visualization Engine:**  
+  - Unity Engine for immersive 3D rendering and interactivity
+
 ---
 
 ## Project Architecture
@@ -83,7 +87,8 @@ The project is divided into three core components:
 
 2. **Visualization Engine:**  
    - Renders a 3D universe where each node represents code elements  
-   - Handles smooth animations, sensor inputs (mouse/touch), and dynamic data updates
+   - Handles smooth animations, sensor inputs (mouse/touch), and dynamic data updates  
+   - Leverages the Unity Engine to build an immersive environment
 
 3. **User Interface:**  
    - Provides an intuitive control panel for filtering, searching, and settings adjustments  
@@ -166,6 +171,23 @@ For an in-depth architectural overview, refer to the [architecture documentation
 
 ---
 
+## Unity Integration
+
+After setting up the backend and frontend, the final phase is integrating the immersive 3D experience using the Unity Engine. The Unity project is structured to complement the backend and frontend systems and brings Nebula Navigator's interactive visualization to life.
+
+- **Setup:**
+  - Open the Unity project located in the designated Unity folder within the repository.
+  - Ensure you are using [the recommended Unity version](#) (please refer to project documentation for specific version details).
+  - Build and run the Unity project to see the 3D visualization of your repository in action.
+  
+- **Notes:**
+  - The Unity integration leverages the data supplied by the backend API and augments it with interactive visualizations and advanced UI elements.
+  - Make sure your system complies with the prerequisites mentioned in the Environment Setup if you encounter any file path issues.
+  
+For additional details on Unity-specific configurations, please refer to our Unity setup documentation within the repository.
+
+---
+
 ## Usage
 
 - **3D Exploration:**  
@@ -230,4 +252,3 @@ For questions, suggestions, or further collaboration, please reach out to:
 ---
 
 Nebula Navigator – Transform your code repositories into an interactive universe of insights.
-`
