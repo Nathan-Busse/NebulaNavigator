@@ -10,9 +10,7 @@ Nebula Navigator is an AI-powered interactive tool that transforms code reposito
 
 For a non-technical description of NebulaNavigator it is the same as map orb in mobie version of Treasure Planet:
 
-
-
-
+https://github.com/user-attachments/assets/64da5730-fbf6-4de0-9321-1b733eb20563
 
 Unfortunatly, unlike its fictional muse it wont lead to treasure but instead leads to a more efficeint and proactive developement environment.
 
