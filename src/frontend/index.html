@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nebula Navigator</title>
-    <link rel="stylesheet" href="style.css">
-    </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nebula Navigator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<header>
+  <header>
     <h1>Nebula Navigator</h1>
-        <main>
-            <div id="visualization-container"></div>
-            <!--#D visualization or interactive elements will be rendered here... -->
-            
-            <div>
-        </main>
-        <footer>
-            <p>&copy; 2025 Nebula Navigator. All rights reserved.</p>
-        </footer>
-        <script src="main.js">  </script>
-    </body>
+  </header>
+
+  <main>
+    <div id="visualization-container">
+      <!-- Placeholder for other front-end content -->
+      <p>Explore your code universe and launch the immersive Unity experience below.</p>
+    </div>
+
+    <!-- Button to toggle the Unity iframe -->
+    <button id="launch-unity-btn">Launch Unity Visualization</button>
+
+    <!-- The Unity container; initially hidden -->
+    <div id="unity-container" style="display: none;">
+      <!-- Adjust the src path below to the location of your Unity WebGL build -->
+      <iframe 
+        id="unity-iframe" 
+        src="../unity/NebulaNavigatorUnityProject/index.html" 
+        width="960" 
+        height="600" 
+        frameborder="0">
+      </iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nathan Busse</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
 </html>
